@@ -62,4 +62,4 @@ For developers looking to contribute or modify the application:
 - Use the setup.py to configure additional dependencies if needed.
 
 ---
-credit to roadmap.sh for the idea: https://roadmap.sh/projects/task-tracker
+credit to roadmap.sh for the idea: [https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)
