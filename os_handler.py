@@ -8,13 +8,12 @@ def load_json(file_path):
         return json.load(file)
 
 def increment_id_number():
+    """Increment id number"""
     data = load_json(json_file_path)
-    id_number = data.get("amounts_of_list", 0) + 1
-    data["amounts_of_list"] = id_number
+    id_number = data.get("amount_of_task", 0) + 1
+    data["amount_of_task"] = id_number
 
-    with open(json_file_path, 'w') as file:
-        json.dump(data, file, indent=4)
-
+    dump_json(json_file_path, data)
     return id_number
 
 def dump_json(file_path, new_data):
@@ -22,7 +21,3 @@ def dump_json(file_path, new_data):
     with open(file_path, 'w') as file:
         json.dump(new_data, file, indent=4)
 
-def load(task: str):
-    data = load_json(json_file_path)
-    data["list_of_task"].append(task)
-    dump_json(json_file_path, data)
