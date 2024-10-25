@@ -60,3 +60,6 @@ For developers looking to contribute or modify the application:
 
 - Code is modularized in Python files (e.g., main.py and os_handler.py).
 - Use the setup.py to configure additional dependencies if needed.
+
+---
+credit to roadmap.sh for the idea: https://roadmap.sh/projects/task-tracker
