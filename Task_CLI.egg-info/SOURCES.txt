@@ -1,0 +1,7 @@
+main.py
+setup.py
+Task_CLI.egg-info/PKG-INFO
+Task_CLI.egg-info/SOURCES.txt
+Task_CLI.egg-info/dependency_links.txt
+Task_CLI.egg-info/entry_points.txt
+Task_CLI.egg-info/top_level.txt
