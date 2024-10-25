@@ -51,7 +51,7 @@ After starting the application, you can use commands to interact with your tasks
 
 For more specific usage, refer to the command help:
 ```bash
-python main.py --help
+task-cli --help
 ```
 
 ---
