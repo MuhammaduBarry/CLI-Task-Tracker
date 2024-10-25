@@ -8,11 +8,11 @@ import datetime
 
 app = typer.Typer()
 console = Console()
+status = ['todo', 'in-progress', 'done']
 
 @app.command()
 def add(task: Annotated[str, typer.Argument()] = 'Task created'):
     """Create new task and saves it to JSON file"""
-    status = ['todo', 'in-progress', 'done']
     task_info = {
         'id': increment_id_number(),
         'description': task,
@@ -56,7 +56,6 @@ def update(id_number: int, new_task: str):
     dump_json(json_file_path, data)
 
 
-
 @app.command()
 def delete(id_number: int):
     """Delete an existing task"""
@@ -72,9 +71,54 @@ def delete(id_number: int):
     data["amount_of_task"] -= 1
     dump_json(json_file_path, data)
 
+def mark(id_number: int, index: int):
+    """Template for mark-in-progress & mark-done"""
+    data = load_json(json_file_path)
+    for task in data["list_of_task"]:
+        if task["id"] == id_number:
+            task["status"] = status[index]
+    dump_json(json_file_path, data)
+
 @app.command()
-def update_current_status():
-    pass
+def mark_in_progress(id_number: int):
+    """Change task state to in-progress"""
+    mark(id_number, 1)
+
+@app.command()
+def mark_done(id_number: int):
+    """Change task state to done"""
+    mark(id_number, 2)
+
+def show(index: int):
+    """Template to filter status"""
+    data = load_json(json_file_path)
+    table = Table('ID', 'DESCRIPTION', 'STATUS', 'CREATED-AT', 'UPDATED-AT')
+    for task in data["list_of_task"]:
+        if task["status"] == status[index]:
+            table.add_row(
+                str(task['id']),
+                task['description'],
+                task['status'],
+                task['created_at'],
+                task['updated_at']
+            )
+            console.print(table)
+    dump_json(json_file_path, data)
+
+@app.command()
+def show_done():
+    """Display table to state 'done'"""
+    show(2)
+
+@app.command()
+def show_todo():
+    """Display table to state 'todo'"""
+    show(0)
+
+@app.command()
+def show_in_progress():
+    """Display table to state 'in-progress'"""
+    show(1)
 
 if __name__ == '__main__':
     app()
