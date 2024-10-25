@@ -1,3 +1,4 @@
+#!/bin/bash
 from typing import Annotated
 import typer
 from rich import print
