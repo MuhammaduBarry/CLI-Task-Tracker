@@ -29,7 +29,7 @@ To run the CLI Task Tracker on your local machine, ensure you have Python instal
 1. Clone the Repository:
 ```bash
 git clone https://github.com/MuhammaduBarry/cli-task-tracker.git
-cd cli-task-tracker
+cd ./src/cli-task-tracker
 ```
 2. Run the Application: Start the CLI Task Tracker with:
 ```bash
