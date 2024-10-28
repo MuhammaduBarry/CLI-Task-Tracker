@@ -1,10 +1,13 @@
-from typing import Annotated
+import datetime
+
 import typer
 from rich import print
-from rich.console import Console
 from rich.table import Table
+from typing import Annotated
+from rich.console import Console
+
 from os_handler import *
-import datetime
+
 
 app = typer.Typer()
 console = Console()
