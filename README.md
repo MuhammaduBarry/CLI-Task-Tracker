@@ -37,7 +37,6 @@ pip install -r requirements.txt
 ```
 3. Run the Application: Start the CLI Task Tracker with:
 ```bash
-task-cli add '.....' to add whatever task you need
 ```
 
 ---
