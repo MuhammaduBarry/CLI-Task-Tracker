@@ -29,14 +29,11 @@ To run the CLI Task Tracker on your local machine, ensure you have Python instal
 1. Clone the Repository:
 ```bash
 git clone https://github.com/MuhammaduBarry/cli-task-tracker.git
-cd cli-task-tracker
+cd ./src/cli-task-tracker
 ```
-2. Install Dependencies: Use the requirements file to install dependencies.:
+2. Run the Application: Start the CLI Task Tracker with:
 ```bash
-pip install -r requirements.txt
-```
-3. Run the Application: Start the CLI Task Tracker with:
-```bash
+task-cli add "...."
 ```
 
 ---
@@ -58,7 +55,6 @@ task-cli --help
 For developers looking to contribute or modify the application:
 
 - Code is modularized in Python files (e.g., main.py and os_handler.py).
-- Use the setup.py to configure additional dependencies if needed.
 
 ---
 credit to roadmap.sh for the idea: [https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)
